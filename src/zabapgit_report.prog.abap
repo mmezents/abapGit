@@ -6,7 +6,7 @@ REPORT zabapgit_report.
 SELECT *
   FROM sbook
   INTO TABLE @DATA(lt_bookings)
-  UP TO 250 ROWS.
+  UP TO 50 ROWS. "Updated code
 TRY.
     "Create ALV table object for the output data table
     cl_salv_table=>factory( IMPORTING r_salv_table = DATA(lo_tab)
