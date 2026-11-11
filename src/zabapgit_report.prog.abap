@@ -9,12 +9,12 @@ SELECT *
   UP TO 50 ROWS. "Updated code
 TRY.
     "Create ALV table object for the output data table
-    cl_salv_table=>factory( IMPORTING r_salv_table = DATA(lo_tab)
+    cl_salv_table=>factory( IMPORTING r_salv_table = DATA(lo_alv_tab) "Updated name
                             CHANGING  t_table      = lt_bookings ).
-    lo_tab->get_functions( )->set_all( ).
-    lo_tab->get_columns( )->set_optimize( ).
-    lo_tab->get_display_settings( )->set_striped_pattern( abap_true ).
-    lo_tab->display( ).
+    lo_alv_tab->get_functions( )->set_all( ).
+    lo_alv_tab->get_columns( )->set_optimize( ).
+    lo_alv_tab->get_display_settings( )->set_striped_pattern( abap_true ).
+    lo_alv_tab->display( ).
   CATCH cx_root.
     MESSAGE 'Error in ALV creation' TYPE 'E'.
 ENDTRY.
